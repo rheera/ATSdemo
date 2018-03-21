@@ -26,6 +26,7 @@ public class move : PhysicsObject {
 
 
 
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
