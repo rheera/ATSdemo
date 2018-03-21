@@ -51,6 +51,14 @@ public class move : PhysicsObject {
         if (isFacingLeft) {
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
+
+        if (startLeft)
+        {
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+            setFacingLeft();
+        }
+        
+
 	}
     void setFacingRight()
     {
