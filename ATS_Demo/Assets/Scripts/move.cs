@@ -143,4 +143,14 @@ public class move : PhysicsObject {
     {
         Destroy(this.gameObject);
     }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        // if hit by a dart, stop the crate from moving and turn off the crate's collider box
+        if (coll.gameObject.tag == "Dart")
+        {
+            die();
+            Destroy(coll.gameObject);
+        }
+    }
 }
