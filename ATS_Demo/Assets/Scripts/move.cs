@@ -23,6 +23,8 @@ public class move : PhysicsObject {
     public Collider2D vision;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private bool inPursuit;
+    public int pursuitSpeed;
 
 
 
@@ -78,7 +80,14 @@ public class move : PhysicsObject {
         if (transform.position.x != destination)
         {
             if (transform.position.x > destination) {
-                targetVelocity = Vector2.left;
+                if (inPursuit)
+                {
+                    targetVelocity = Vector2.left * pursuitSpeed;
+                }
+                else
+                {
+                    targetVelocity = Vector2.left;
+                }
                 if (isFacingRight)
                 {
                     Debug.Log("Here");
@@ -88,7 +97,14 @@ public class move : PhysicsObject {
             }
             else
             {
-                targetVelocity = Vector2.right;
+                if (inPursuit)
+                {
+                    targetVelocity = Vector2.right * pursuitSpeed;
+                }
+                else
+                {
+                    targetVelocity = Vector2.right;
+                }
                 if (isFacingLeft)
                 {
                     Debug.Log("There");
@@ -97,11 +113,9 @@ public class move : PhysicsObject {
                 }
             }
         }
-        //print(destination);
-        //print(transform.position.x);
-        //print(rest);
+
         if ((int)transform.position.x == (int)destination) {
-            
+            inPursuit = false;
             if (isPatroller)
             {
                 if (returning)
@@ -118,6 +132,7 @@ public class move : PhysicsObject {
             else
             {
                 destination = rest;
+                
             }
 
         }
@@ -134,7 +149,7 @@ public class move : PhysicsObject {
     }
     private void detect()
     {
-  
+        inPursuit = true;
      destination = target.position.x;
     
     }
