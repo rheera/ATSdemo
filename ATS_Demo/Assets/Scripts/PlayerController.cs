@@ -110,7 +110,10 @@ public class PlayerController : PhysicsObject {
                 dead = true;
             }
         }
+    }
 
+    public void setDead(bool dead) {
+        this.dead = dead;
     }
 
 }

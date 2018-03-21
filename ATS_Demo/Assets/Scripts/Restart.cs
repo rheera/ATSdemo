@@ -15,7 +15,11 @@ public class Restart : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown("r"))
         {
-            SceneManager.LoadScene(0);
+            RestartScene();
         }
 	}
+
+    public void RestartScene() {
+        SceneManager.LoadScene(0);
+    }
 }
