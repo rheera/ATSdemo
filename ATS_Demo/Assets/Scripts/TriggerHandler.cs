@@ -6,6 +6,7 @@ public class TriggerHandler : MonoBehaviour {
 
     private CoinPickup coinPickup;
     private bool hiding = false;
+    public bool pickedup;
 
     // Use this for initialization
     void Start()
@@ -17,6 +18,7 @@ public class TriggerHandler : MonoBehaviour {
     {
         if (col.CompareTag("Coin"))
         {
+            pickedup = true;
             Destroy(col.gameObject);
             coinPickup.coins += 1;
         }

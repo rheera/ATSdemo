@@ -5,18 +5,28 @@ using UnityEngine;
 public class SoundEffectController : MonoBehaviour {
 
     public AudioClip jump;
-    private AudioSource audioSource;
+    public AudioClip coin;
+    private AudioSource audioSourceJump;
+    private AudioSource audioSourceCoin;
     public PhysicsObject player;
+    public TriggerHandler trigger;
 
 	// Use this for initialization
 	void Awake () {
-        audioSource = GetComponent<AudioSource>();
-	}
+        audioSourceJump = GetComponent<AudioSource>();
+        audioSourceCoin = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+
         if (Input.GetButtonDown("Jump") && (player.grounded || player.canDoubleJump)) {
-            audioSource.PlayOneShot(jump);
+            audioSourceJump.PlayOneShot(jump);
         }
+        if (trigger.pickedup == true) {
+            audioSourceCoin.PlayOneShot(coin);
+            trigger.pickedup = false;
+        }
+
 	}
 }
