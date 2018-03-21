@@ -25,6 +25,7 @@ public class move : PhysicsObject {
     private Animator animator;
     private bool inPursuit;
     public int pursuitSpeed;
+    public bool startLeft; 
 
 
 
@@ -151,6 +152,7 @@ public class move : PhysicsObject {
     {
         inPursuit = true;
      destination = target.position.x;
+        animator.SetInteger("state", 1);
     
     }
 
