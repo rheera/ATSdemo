@@ -18,14 +18,15 @@ public class move : PhysicsObject {
     public int patrolDirection;  //1 is right   -1 is left
     bool returning = false;
     public GameObject visionCone;
-    bool isFacingRight;
-    bool isFacingLeft;
+    bool isFacingRight = true;
+    bool isFacingLeft = false;
     public Collider2D vision;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private bool inPursuit;
     public int pursuitSpeed;
-    public bool startLeft; 
+    public bool startLeft;
+    private bool startLeft2;
 
 
 
@@ -46,17 +47,15 @@ public class move : PhysicsObject {
             patrolEnd = rest + (patrolDirection * patrolDistance);
             destination = patrolEnd;
         }
-        isFacingLeft = true;
-
-        if (isFacingLeft) {
-            spriteRenderer.flipX = !spriteRenderer.flipX;
-        }
-
+        
         if (startLeft)
         {
-            spriteRenderer.flipX = !spriteRenderer.flipX;
-            setFacingLeft();
+            Debug.Log(startLeft);
+            isFacingLeft= true;
+            isFacingRight = false;
+            startLeft2 = startLeft;
         }
+        
         
 
 	}
@@ -70,11 +69,20 @@ public class move : PhysicsObject {
     }
     void setFacingLeft()
     {
+        if (startLeft) {
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+            visionCone.transform.Rotate(new Vector3(0, 180, 0));
+            visionCone.transform.Translate(-5.13f, 0, 0);
+            startLeft = false;
+        }
         spriteRenderer.flipX = !spriteRenderer.flipX;
         visionCone.transform.Rotate(new Vector3(0, 180, 0));
         visionCone.transform.Translate(-5.13f, 0, 0);
         isFacingLeft = true;
         isFacingRight = false;
+
+        
+
     }
 	// Update is called once per frame
 	void Update () {
@@ -152,6 +160,9 @@ public class move : PhysicsObject {
             {
                 targetVelocity = Vector2.zero;
                 animator.SetInteger("state", 0);
+                if (startLeft2 && !isFacingLeft) {
+                    setFacingLeft();
+                }
             }
         }
 
@@ -160,8 +171,7 @@ public class move : PhysicsObject {
     {
         inPursuit = true;
      destination = target.position.x;
-        animator.SetInteger("state", 1);
-    
+     animator.SetInteger("state", 1);
     }
 
     private void die()

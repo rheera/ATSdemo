@@ -20,9 +20,10 @@ public class vision : MonoBehaviour
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
-        {
+        { 
             SendMessageUpwards("detect");
         }
 
     }
+
 }
