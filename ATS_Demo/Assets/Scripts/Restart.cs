@@ -19,7 +19,14 @@ public class Restart : MonoBehaviour {
         }
 	}
 
-    public void RestartScene() {
+    /*
+    public IEnumerator RestartScene() {
+        float fadeTime = GameObject.Find("Player").GetComponent<Fading>().BeginFade(1);
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene(0);
+    }*/
+    public void RestartScene()
+    {
         SceneManager.LoadScene(0);
     }
 }
