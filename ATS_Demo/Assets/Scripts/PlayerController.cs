@@ -12,6 +12,7 @@ public class PlayerController : PhysicsObject {
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private TriggerHandler trigger;
     
 
     // Use this for initialization
@@ -19,6 +20,7 @@ public class PlayerController : PhysicsObject {
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        trigger = GetComponent<TriggerHandler>();
     }
     
     // Use this for initialization

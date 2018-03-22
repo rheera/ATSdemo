@@ -6,12 +6,26 @@ public class TriggerHandler : MonoBehaviour {
 
     private CoinPickup coinPickup;
     private bool hiding = false;
+    private Rigidbody2D rb2d;
     public bool pickedup;
 
     // Use this for initialization
     void Start()
     {
         coinPickup = GameObject.FindGameObjectWithTag("CoinCollect").GetComponent<CoinPickup>();
+    }
+
+    private void Awake()
+    {
+        rb2d = gameObject.GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && hiding) {
+          //  rb2d.simulated = true;
+            hiding = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -33,24 +47,17 @@ public class TriggerHandler : MonoBehaviour {
         if (col.CompareTag("HidingSpot"))
         {
             
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                if (!hiding)
-                {
-                    Debug.Log("Hiding");
-                    //Hiding Logic goes here
-                    gameObject.tag = "Hiding";
-                    hiding = true;
-                }
-                else if (hiding)
-                {
-                    Debug.Log("Out of Hiding");
-                    //Reverting from hiding state here
-                    gameObject.tag = "Player";
-                    hiding = false;
-                }
+                gameObject.GetComponent<Rigidbody2D>().simulated = !gameObject.GetComponent<Rigidbody2D>().simulated;
+                hiding = true;
+                //gameObject.GetComponent<CapsuleCollider2D>().enabled = !gameObject.GetComponent<CapsuleCollider2D>().enabled;
             }
         }
+    }
+
+    public bool getHiding() {
+        return hiding;
     }
 
 

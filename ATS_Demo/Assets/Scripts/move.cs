@@ -107,7 +107,6 @@ public class move : PhysicsObject {
                 }
                 if (isFacingRight)
                 {
-                    Debug.Log("Here");
                     animator.SetInteger("state", 1);
                     setFacingLeft();
                 }
@@ -124,7 +123,6 @@ public class move : PhysicsObject {
                 }
                 if (isFacingLeft)
                 {
-                    Debug.Log("There");
                     animator.SetInteger("state", 1);
                     setFacingRight();
                 }
