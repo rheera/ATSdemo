@@ -7,6 +7,7 @@ public class TriggerHandler : MonoBehaviour {
     private CoinPickup coinPickup;
     private bool hiding = false;
     private Rigidbody2D rb2d;
+    private SpriteRenderer spriteRenderer;
     public bool pickedup;
 
     // Use this for initialization
@@ -18,12 +19,14 @@ public class TriggerHandler : MonoBehaviour {
     private void Awake()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && hiding) {
-          //  rb2d.simulated = true;
+        if (Input.GetKeyDown(KeyCode.F) && hiding) {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            rb2d.simulated = true;
             hiding = false;
         }
     }
@@ -50,8 +53,8 @@ public class TriggerHandler : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 gameObject.GetComponent<Rigidbody2D>().simulated = !gameObject.GetComponent<Rigidbody2D>().simulated;
+                spriteRenderer.enabled = !spriteRenderer.enabled;
                 hiding = true;
-                //gameObject.GetComponent<CapsuleCollider2D>().enabled = !gameObject.GetComponent<CapsuleCollider2D>().enabled;
             }
         }
     }
