@@ -99,15 +99,17 @@ public class PlayerController : PhysicsObject {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == ("Crate")){
-            float width = GetComponent<SpriteRenderer>().bounds.size.y;
-            if ((this.gameObject.transform.position.y - width) + 1.1f >= collision.gameObject.transform.position.y)
-            {
-                Destroy(collision.gameObject);
-                velocity.y = jumpTakeOffSpeed * 0.75f;
-            }
-            else {
-                dead = true;
+        if(gameObject.tag != "Hiding") { 
+            if (collision.gameObject.tag == ("Crate")){
+                float width = GetComponent<SpriteRenderer>().bounds.size.y;
+                if ((this.gameObject.transform.position.y - width) + 1.1f >= collision.gameObject.transform.position.y)
+                {
+                    Destroy(collision.gameObject);
+                    velocity.y = jumpTakeOffSpeed * 0.75f;
+                }
+                else {
+                    dead = true;
+                }
             }
         }
     }

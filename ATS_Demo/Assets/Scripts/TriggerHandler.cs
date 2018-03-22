@@ -33,19 +33,20 @@ public class TriggerHandler : MonoBehaviour {
         if (col.CompareTag("HidingSpot"))
         {
             
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
-                Debug.Log("Button Press");
                 if (!hiding)
                 {
+                    Debug.Log("Hiding");
                     //Hiding Logic goes here
-                    Debug.Log("In Hiding");
+                    gameObject.tag = "Hiding";
                     hiding = true;
                 }
                 else if (hiding)
                 {
-                    //Reverting from hiding state here
                     Debug.Log("Out of Hiding");
+                    //Reverting from hiding state here
+                    gameObject.tag = "Player";
                     hiding = false;
                 }
             }
