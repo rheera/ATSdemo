@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour {
 
+    public GameObject button;
+
+    private void Awake()
+    {
+        if (SceneControl.control.checkSave())
+        {
+            button.SetActive(true);
+        }
+    }
+
     public void PlayGame() {
         SceneControl.control.NextScene();
     }
@@ -12,5 +22,10 @@ public class MainMenuController : MonoBehaviour {
         
     public void ExitGame() {
         Application.Quit();
+    }
+
+    public void Continue() {
+        SceneControl.control.Load();
+        SceneManager.LoadScene(SceneControl.control.GetSceneIndex());
     }
 }

@@ -29,9 +29,18 @@ public class SceneControl : MonoBehaviour {
         sceneIndex = index;
 	}
 
+    public int GetSceneIndex() {
+        return sceneIndex;
+    }
+
     public void NextScene() {
         sceneIndex += 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    //Checks to see if a save file exists
+    public bool checkSave() {
+        return File.Exists(Application.persistentDataPath + "/sceneInfo.dat");
     }
 
     public void Save() {
