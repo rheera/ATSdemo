@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerHandler : MonoBehaviour {
+public class TriggerHandler : MonoBehaviour
+{
 
     private CoinPickup coinPickup;
     private bool hiding = false;
@@ -22,9 +23,11 @@ public class TriggerHandler : MonoBehaviour {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.F) && hiding) {
+        if (Input.GetKeyDown(KeyCode.E) && hiding)
+        {
+            Debug.Log("Entered");
             spriteRenderer.enabled = !spriteRenderer.enabled;
             rb2d.simulated = true;
             hiding = false;
@@ -50,19 +53,26 @@ public class TriggerHandler : MonoBehaviour {
     {
         if (col.CompareTag("HidingSpot"))
         {
-            
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 gameObject.GetComponent<Rigidbody2D>().simulated = !gameObject.GetComponent<Rigidbody2D>().simulated;
                 spriteRenderer.enabled = !spriteRenderer.enabled;
-                hiding = true;
+                StartCoroutine(Hiding());
             }
         }
     }
 
-    public bool getHiding() {
+    public bool getHiding()
+    {
         return hiding;
     }
 
+    IEnumerator Hiding()
+    {
+        Debug.Log("Here");
+        yield return new WaitForSeconds(0.2f);
+        hiding = true;
+    }
 
 }

@@ -26,6 +26,7 @@ public class MainMenuController : MonoBehaviour {
 
     public void Continue() {
         SceneControl.control.Load();
+        GameControl.control.Load();
         SceneManager.LoadScene(SceneControl.control.GetSceneIndex());
     }
 }
