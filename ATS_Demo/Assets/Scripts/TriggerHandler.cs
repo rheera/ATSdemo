@@ -37,7 +37,7 @@ public class TriggerHandler : MonoBehaviour {
         {
             pickedup = true;
             Destroy(col.gameObject);
-            coinPickup.coins += 1;
+            GameControl.control.coins += 1;
         }
         if (col.CompareTag("Treasure"))
         {
