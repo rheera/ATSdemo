@@ -1,14 +1,16 @@
 fileFormatVersion: 2
-guid: 0a7d5b0df5b90ac428e15816d2240d8a
-timeCreated: 1521913427
+guid: efd191bbc09e33d4097b5ce27c619360
+timeCreated: 1521913124
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ObjectTileSet_0
-    21300002: ObjectTileSet_1
-    21300004: ObjectTileSet_2
-    21300006: ObjectTileSet_3
-    21300008: ObjectTileSet_4
+    21300000: FireSpriteSheet2_0
+    21300002: FireSpriteSheet2_1
+    21300004: FireSpriteSheet2_2
+    21300006: FireSpriteSheet2_3
+    21300008: FireSpriteSheet2_4
+    21300010: FireSpriteSheet2_5
+    21300012: FireSpriteSheet2_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -85,7 +87,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ObjectTileSet_0
+      name: FireSpriteSheet2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -99,7 +101,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ObjectTileSet_1
+      name: FireSpriteSheet2_1
       rect:
         serializedVersion: 2
         x: 32
@@ -113,7 +115,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ObjectTileSet_2
+      name: FireSpriteSheet2_2
       rect:
         serializedVersion: 2
         x: 16
@@ -127,11 +129,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ObjectTileSet_3
+      name: FireSpriteSheet2_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -141,11 +143,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ObjectTileSet_4
+      name: FireSpriteSheet2_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
+        x: 48
+        y: 0
         width: 16
         height: 16
       alignment: 0

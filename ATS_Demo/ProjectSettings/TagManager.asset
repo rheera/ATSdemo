@@ -16,6 +16,8 @@ TagManager:
   - HidingSpot
   - DeathZone
   - Hiding
+  - Spike
+  - Fire
   layers:
   - Default
   - TransparentFX

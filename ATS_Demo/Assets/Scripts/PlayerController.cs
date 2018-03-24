@@ -43,7 +43,7 @@ public class PlayerController : PhysicsObject {
         }
 
         //Will have to modify for double jump 
-        if (Input.GetButtonDown("Jump") )
+        if (Input.GetButtonDown("Jump")) 
         {
             if (grounded)
             {
@@ -112,6 +112,10 @@ public class PlayerController : PhysicsObject {
                 else {
                     dead = true;
                 }
+            }
+            if (collision.gameObject.tag == ("Spike") || collision.gameObject.tag == ("Fire"))
+            {
+                dead = true;
             }
         }
     }

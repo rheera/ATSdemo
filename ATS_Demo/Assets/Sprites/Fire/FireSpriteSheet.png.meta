@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: 0a7d5b0df5b90ac428e15816d2240d8a
-timeCreated: 1521913427
+guid: 0a099346b1135d94593a86b23c3a6cbf
+timeCreated: 1521865990
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ObjectTileSet_0
-    21300002: ObjectTileSet_1
-    21300004: ObjectTileSet_2
-    21300006: ObjectTileSet_3
-    21300008: ObjectTileSet_4
+    21300000: FireSpriteSheet_0
+    21300002: FireSpriteSheet_1
+    21300004: FireSpriteSheet_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -85,71 +83,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ObjectTileSet_0
+      name: FireSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 48
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ObjectTileSet_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ObjectTileSet_2
+      name: FireSpriteSheet_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 48
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ObjectTileSet_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ObjectTileSet_4
+      name: FireSpriteSheet_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
+        y: 48
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
