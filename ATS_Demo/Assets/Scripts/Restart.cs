@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour {
 
+    private Scene scene;
+
 	// Use this for initialization
     //Scene scene;
     void Start () {
-        //Scene scene = SceneManager.GetActiveScene();
+        scene = SceneManager.GetActiveScene();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,10 @@ public class Restart : MonoBehaviour {
     }*/
     public void RestartScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(scene.name);
+    }
+
+    public int sceneIndex() {
+        return SceneManager.GetActiveScene().buildIndex;
     }
 }

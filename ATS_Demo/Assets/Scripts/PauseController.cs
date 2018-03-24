@@ -33,4 +33,15 @@ public class PauseController : MonoBehaviour {
         Time.timeScale = 0f;
         GamePaused = true;
     }
+
+    public void Save() {
+        SceneControl.control.Save();
+        GameControl.control.Save();
+    }
+
+    public void Load() {
+        SceneControl.control.Load();
+        GameControl.control.Load();
+    }
+
 }

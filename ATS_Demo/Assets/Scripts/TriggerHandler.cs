@@ -41,6 +41,7 @@ public class TriggerHandler : MonoBehaviour {
         }
         if (col.CompareTag("Treasure"))
         {
+            SceneControl.control.NextScene();
             Destroy(col.gameObject);
         }
     }

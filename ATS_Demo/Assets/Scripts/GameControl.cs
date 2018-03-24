@@ -5,6 +5,7 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
+
 public class GameControl : MonoBehaviour {
 
     public static GameControl control;
@@ -24,7 +25,7 @@ public class GameControl : MonoBehaviour {
 	}
 
     public void Save() {
-        Debug.Log("Entered Save: " + coins );
+        //Debug.Log("Entered Save: " + coins );
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
         PlayerData data = new PlayerData(coins);
@@ -39,7 +40,7 @@ public class GameControl : MonoBehaviour {
             PlayerData data = (PlayerData)bf.Deserialize(file);
             file.Close();
             coins = data.getCoins();
-            Debug.Log("Entered Secondary Load: " + coins);
+           // Debug.Log("Entered Secondary Load: " + coins);
         }
     }
 
@@ -63,3 +64,4 @@ class PlayerData {
     }
 
 }
+
