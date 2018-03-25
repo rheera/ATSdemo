@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class TriggerHandler : MonoBehaviour
 {
-
+    public float fadeInTime;
     private CoinPickup coinPickup;
     private bool hiding = false;
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
     public bool pickedup;
+    private bool fading = false;
+    private bool playOnce = true;
 
     // Use this for initialization
     void Start()
@@ -28,9 +30,23 @@ public class TriggerHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && hiding)
         {
             Debug.Log("Entered");
+            SmokeEffectController.control.Play();
             spriteRenderer.enabled = !spriteRenderer.enabled;
             rb2d.simulated = true;
             hiding = false;
+        }
+        if (hiding)
+        {
+            TutorialTextController.control.SetTutorialText("Press \"E\" to exit the hiding spot\n You can not be detected while hiding");
+            if (playOnce) {
+                TutorialTextController.control.ShowText(true);
+                playOnce = false;
+            }
+        }
+        else
+        {
+            TutorialTextController.control.SetTutorialText("This is a hiding spot\n Press \"E\" to enter");
+            playOnce = true;
         }
     }
 
@@ -47,6 +63,10 @@ public class TriggerHandler : MonoBehaviour
             SceneControl.control.NextScene();
             Destroy(col.gameObject);
         }
+        if (col.CompareTag("HidingSpot"))
+        {
+            TutorialTextController.control.ShowText(true);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D col)
@@ -56,9 +76,11 @@ public class TriggerHandler : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                SmokeEffectController.control.Play();
                 gameObject.GetComponent<Rigidbody2D>().simulated = !gameObject.GetComponent<Rigidbody2D>().simulated;
                 spriteRenderer.enabled = !spriteRenderer.enabled;
                 StartCoroutine(Hiding());
+                //StartCoroutine(FadeIn());
             }
         }
     }
@@ -68,11 +90,27 @@ public class TriggerHandler : MonoBehaviour
         return hiding;
     }
 
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("HidingSpot") && gameObject.GetComponent<Rigidbody2D>().simulated)
+        {
+            TutorialTextController.control.ShowText(false);
+        }
+    }
+
     IEnumerator Hiding()
     {
         Debug.Log("Here");
         yield return new WaitForSeconds(0.2f);
         hiding = true;
+    }
+
+    IEnumerator FadeIn()
+    {
+        fading = true;
+        yield return new WaitForSeconds(fadeInTime);
+        spriteRenderer.enabled = !spriteRenderer.enabled;
+        fading = false;
     }
 
 }

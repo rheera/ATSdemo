@@ -6,6 +6,7 @@ public class PauseController : MonoBehaviour {
 
     public static bool GamePaused = false;
     public GameObject pauseMenu;
+    private bool tutorialText = false;
 
 	// Update is called once per frame
 	void Update () {
@@ -22,6 +23,10 @@ public class PauseController : MonoBehaviour {
 
     public void Resume()
     {
+        if (tutorialText) {
+            TutorialTextController.control.ShowText(true);
+            tutorialText = false;
+        }
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
@@ -29,6 +34,11 @@ public class PauseController : MonoBehaviour {
 
     void Pause()
     {
+        if (TutorialTextController.control.GetShowText())
+        {
+            tutorialText = true;
+            TutorialTextController.control.ShowText(false);
+        }
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GamePaused = true;
