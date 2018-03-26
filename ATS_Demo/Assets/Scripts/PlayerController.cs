@@ -9,6 +9,7 @@ public class PlayerController : PhysicsObject {
     private Vector3 originalPos;
     private bool dead = false;
     private bool jumping = false;
+    public bool isLeft = true;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -68,6 +69,7 @@ public class PlayerController : PhysicsObject {
         bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < -0.01f));
         if (flipSprite)
         {
+            isLeft = !isLeft;
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
 
@@ -122,6 +124,10 @@ public class PlayerController : PhysicsObject {
 
     public void setDead(bool dead) {
         this.dead = dead;
+    }
+
+    public bool GetLeft() {
+        return isLeft;
     }
 
 }

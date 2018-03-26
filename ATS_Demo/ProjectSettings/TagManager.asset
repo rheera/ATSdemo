@@ -18,6 +18,7 @@ TagManager:
   - Hiding
   - Spike
   - Fire
+  - Noise
   layers:
   - Default
   - TransparentFX

@@ -95,4 +95,11 @@ public class PhysicsObject : MonoBehaviour {
 
         rb2d.position = rb2d.position + move.normalized * distance;
     }
+    public void SetVelocity(float vely, float velx) {
+        velocity.y = vely;
+        targetVelocity.x = velx;
+        Debug.Log("Here");
+        Debug.Log(this);
+    }
+
 }

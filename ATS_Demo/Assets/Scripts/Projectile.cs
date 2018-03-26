@@ -8,17 +8,34 @@ public class Projectile : MonoBehaviour {
     public GameObject projectilePrefabLeft;
     private List<GameObject> Projectiles = new List<GameObject>();
     private List<GameObject> ProjectilesLeft = new List<GameObject>();
+    private PlayerController control;
     private float projectileVelocity;
-	// Use this for initialization
-	void Start () {
+
+    private void Awake()
+    {
+        control = gameObject.GetComponent<PlayerController>();
+    }
+
+    // Use this for initialization
+    void Start () {
         projectileVelocity = 10;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetButtonDown("BlowdartRight")){
-            GameObject blowdart = (GameObject)Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Projectiles.Add(blowdart);
+            if (control.GetLeft())
+            {
+                GameObject blowdart = (GameObject)Instantiate(projectilePrefabLeft, new Vector3(transform.position.x - 1f, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
+                ProjectilesLeft.Add(blowdart);
+            }
+
+            else
+            {
+                GameObject blowdart = (GameObject)Instantiate(projectilePrefab, new Vector3(transform.position.x + 1f, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
+                Projectiles.Add(blowdart);
+            }
+            
         }
         for (int i = 0; i < Projectiles.Count; i++){
             GameObject goBlowdart = Projectiles[i];
@@ -32,11 +49,6 @@ public class Projectile : MonoBehaviour {
                 }
 
             }
-        }
-        if (Input.GetButtonDown("BlowdartLeft"))
-        {
-            GameObject blowdartLeft = (GameObject)Instantiate(projectilePrefabLeft, transform.position, Quaternion.identity);
-            ProjectilesLeft.Add(blowdartLeft);
         }
         for (int i = 0; i < ProjectilesLeft.Count; i++)
         {
