@@ -172,6 +172,13 @@ public class move : PhysicsObject {
      animator.SetInteger("state", 1);
     }
 
+    private void detectNoise(float noise) {
+        Debug.Log(noise);
+        inPursuit = true;
+        destination = noise;
+        animator.SetInteger("state", 1);
+    }
+
     private void die()
     {
         Destroy(this.gameObject);
@@ -186,4 +193,13 @@ public class move : PhysicsObject {
             Destroy(coll.gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Noise")) {
+            detectNoise(collision.gameObject.transform.position.x);
+            DestroyObject(collision.gameObject);
+        }
+    }
+
 }
