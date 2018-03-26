@@ -10,7 +10,15 @@ public class GroundCollision : MonoBehaviour {
     {
         if (collision.collider.CompareTag("TileMap"))
         {
-            col.enabled = true;  
+            col.enabled = true;
+            StartCoroutine(DestoryThing());
         }
     }
+
+    IEnumerator DestoryThing() {
+
+        yield return new WaitForSeconds(0.01f);
+        DestroyObject(gameObject);
+    }
+
 }
