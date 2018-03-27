@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f28572afe215347f28a68448662e971a
-timeCreated: 1522162170
+guid: a453c6a3bbd1787459553421e83c68e3
+timeCreated: 1522165841
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -32,7 +32,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
     wrapU: 1
     wrapV: 1

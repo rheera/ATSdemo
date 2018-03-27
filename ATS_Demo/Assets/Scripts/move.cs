@@ -27,6 +27,7 @@ public class move : PhysicsObject {
     public int pursuitSpeed;
     public bool startLeft;
     private bool startLeft2;
+    public bool madDash;
 
 
 
@@ -88,11 +89,13 @@ public class move : PhysicsObject {
 	void Update () {
 
         float distance = Vector2.Distance(target.position, transform.position);
-
-        //if (distance <= lookRadius)
-        //{
-        //    destination = target.position.x;
-        //}
+        if (madDash)
+        {
+            if (distance <= lookRadius)
+            {
+                destination = target.position.x;
+            }
+        }
 
         if (transform.position.x != destination)
         {
