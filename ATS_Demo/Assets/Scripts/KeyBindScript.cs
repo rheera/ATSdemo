@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class KeyBindScript : MonoBehaviour {
 
+    public static KeyBindScript keybindControl;
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
 
     public Text jump, left, right, interact, shootLeft, shootRight;
@@ -14,8 +15,13 @@ public class KeyBindScript : MonoBehaviour {
     private Color32 normal = new Color(39, 171, 249, 255);
     private Color32 slected = new Color32(239, 116, 36, 255);
 
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        keybindControl = this;
+    }
+
+    // Use this for initialization
+    void Start () {
         keys.Add("JumpButton", (KeyCode)System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("JumpButton", "W")));
         keys.Add("LeftButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButton", "A")));
         keys.Add("RightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButton", "D")));
@@ -89,6 +95,7 @@ public class KeyBindScript : MonoBehaviour {
     {
         foreach (var key in keys)
         {
+            Debug.Log(key.Key);
             PlayerPrefs.SetString(key.Key, key.Value.ToString());
             Debug.Log("Scanning");
         }
@@ -96,4 +103,9 @@ public class KeyBindScript : MonoBehaviour {
         PlayerPrefs.Save();
         Debug.Log("Saved");
     }
+
+    public Dictionary<string, KeyCode> GetKeys() {
+        return keys;
+    }
+
 }
