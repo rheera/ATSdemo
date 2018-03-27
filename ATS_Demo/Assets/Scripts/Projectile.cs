@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour {
     private List<GameObject> ProjectilesLeft = new List<GameObject>();
     private PlayerController control;
     private float projectileVelocity;
-    private float dartAmt;
+    private int dartAmt;
     private bool playOnce = true;
 
     private void Awake()
@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"])){
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"]) && dartAmt > 0){
 
             if (control.GetLeft())
             {
@@ -72,14 +72,24 @@ public class Projectile : MonoBehaviour {
 
             }
         }
-        if (Input.GetButtonDown("BlowdartRight") && dartAmt < 0)
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"]) && dartAmt <= 0)
         {
+            playOnce = true;
+            Debug.Log(dartAmt);
             TutorialTextController.control.SetTutorialText("You're out of darts!");
             if (playOnce)
             {
                 TutorialTextController.control.ShowText(true);
                 playOnce = false;
+                StartCoroutine(FadeTime());
             }
         }
 	}
+
+    IEnumerator FadeTime() {
+        yield return new WaitForSeconds(1);
+        TutorialTextController.control.ShowText(false);
+    }
+
+
 }
