@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Projectile : MonoBehaviour {
 
@@ -10,7 +11,8 @@ public class Projectile : MonoBehaviour {
     private List<GameObject> ProjectilesLeft = new List<GameObject>();
     private PlayerController control;
     private float projectileVelocity;
-    private int dartAmt;
+    public int dartAmt;
+    public Text dartText;
     private bool playOnce = true;
 
     private void Awake()
@@ -26,6 +28,7 @@ public class Projectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        dartText.text = ("Dart x " + dartAmt);
         if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"]) && dartAmt > 0){
 
             if (control.GetLeft())
