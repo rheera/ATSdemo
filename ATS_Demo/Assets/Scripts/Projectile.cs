@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("BlowdartRight")){
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"])){
             if (control.GetLeft())
             {
                 GameObject blowdart = (GameObject)Instantiate(projectilePrefabLeft, new Vector3(transform.position.x - 1f, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);

@@ -12,6 +12,7 @@ public class TriggerHandler : MonoBehaviour
     public bool pickedup;
     private bool fading = false;
     private bool playOnce = true;
+    private bool collidingHiding = false;
 
     // Use this for initialization
     void Start()
@@ -35,18 +36,22 @@ public class TriggerHandler : MonoBehaviour
             rb2d.simulated = true;
             hiding = false;
         }
-        if (hiding)
+        if (collidingHiding)
         {
-            TutorialTextController.control.SetTutorialText("Press \"E\" to exit the hiding spot\n You can not be detected while hiding");
-            if (playOnce) {
-                TutorialTextController.control.ShowText(true);
-                playOnce = false;
+            if (hiding)
+            {
+                TutorialTextController.control.SetTutorialText("Press \"E\" to exit the hiding spot\n You can not be detected while hiding");
+                if (playOnce)
+                {
+                    TutorialTextController.control.ShowText(true);
+                    playOnce = false;
+                }
             }
-        }
-        else
-        {
-            TutorialTextController.control.SetTutorialText("This is a hiding spot\n Press \"E\" to enter");
-            playOnce = true;
+            else
+            {
+                TutorialTextController.control.SetTutorialText("This is a hiding spot\n Press \"E\" to enter");
+                playOnce = true;
+            }
         }
     }
 
@@ -65,6 +70,7 @@ public class TriggerHandler : MonoBehaviour
         }
         if (col.CompareTag("HidingSpot"))
         {
+            collidingHiding = true;
             TutorialTextController.control.ShowText(true);
         }
     }
@@ -94,6 +100,7 @@ public class TriggerHandler : MonoBehaviour
     {
         if (col.CompareTag("HidingSpot") && gameObject.GetComponent<Rigidbody2D>().simulated)
         {
+            collidingHiding = false;
             TutorialTextController.control.ShowText(false);
         }
     }
