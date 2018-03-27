@@ -6,15 +6,21 @@ public class SoundEffectController : MonoBehaviour {
 
     public AudioClip jump;
     public AudioClip coin;
-
     public AudioClip blowDart;
+    public AudioClip rock;
+    public AudioClip hide;
+
     public AudioSource audioSourceJump;
     public AudioSource audioSourceCoin;
     public AudioSource audioSourceBlowdart;
+    public AudioSource audioSourceRock;
+    public AudioSource audioSourceHide;
 
     public PhysicsObject player;
     public TriggerHandler trigger;
     public Projectile projectile;
+    public Rock rockClass;
+    public TriggerHandler hiding;
 
 	
 	// Update is called once per frame
@@ -32,5 +38,9 @@ public class SoundEffectController : MonoBehaviour {
             audioSourceBlowdart.PlayOneShot(blowDart);
         }
 
+        if (Input.GetKeyDown(KeyCode.E) && hiding.getCollidingHiding())
+        {
+            audioSourceBlowdart.PlayOneShot(blowDart);
+        }
 	}
 }

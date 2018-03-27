@@ -24,6 +24,7 @@ AudioMixerController:
     - 55d25ab27ece38849b6b6fae69ce5447
     - 2c1c1c7b37adefa42888c05f35841322
     - 5333e39ed37e944f2971bd17d4a0b4ed
+    - 97dfd98185a144ca692699e27cdcfafd
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -40,6 +41,7 @@ AudioMixerGroupController:
   - {fileID: 243590064100041004}
   - {fileID: 243916617463883546}
   - {fileID: 243643539767015704}
+  - {fileID: 243714067847848224}
   m_Volume: 5ae81f1ba468ffe4d9d3bd7b5bca6005
   m_Pitch: 2fc93ef4817185240b699fef3ffce3c2
   m_Effects:
@@ -122,6 +124,23 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &243714067847848224
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Rock
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 97dfd98185a144ca692699e27cdcfafd
+  m_Children: []
+  m_Volume: 6dc26504e25ba474b950bdb1da805dad
+  m_Pitch: 2a7b5843c53d249c49dd918327a40dab
+  m_Effects:
+  - {fileID: 244493504234804510}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &243916617463883546
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -148,6 +167,19 @@ AudioMixerEffectController:
   m_EffectID: dade29bbca1924124b1a3436a803418d
   m_EffectName: Attenuation
   m_MixLevel: 17170f7fd3062410180300812b906041
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &244493504234804510
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 99ffc9ec4796b4eb58844efab218a91a
+  m_EffectName: Attenuation
+  m_MixLevel: fd1993d272cf2432c947144de3c09459
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0

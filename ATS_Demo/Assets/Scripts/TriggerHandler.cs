@@ -143,6 +143,10 @@ public class TriggerHandler : MonoBehaviour
         return hiding;
     }
 
+    public bool getCollidingHiding(){
+        return collidingHiding;
+    }
+
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("HidingSpot") && gameObject.GetComponent<Rigidbody2D>().simulated)
