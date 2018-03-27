@@ -31,15 +31,6 @@ public class SoundEffectController : MonoBehaviour {
         {
             audioSourceBlowdart.PlayOneShot(blowDart);
         }
+
 	}
-
-    public void PlayHit() {
-        Debug.Log("Hit Detected");
-        audioSourceCoin.PlayOneShot(coin);
-    }
-
-    public void PlayRock() {
-        Debug.Log("Hit Detected");
-        audioSourceCoin.PlayOneShot(coin);
-    }
 }

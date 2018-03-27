@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 97c96225ef60c1c4b8a108ba9de5e303
-timeCreated: 1522176786
+timeCreated: 1522178474
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,15 @@ TextureImporter:
     21300008: BrickBackgroundPillarsTransparent_4
     21300010: BrickBackgroundPillarsTransparent_5
     21300012: BrickBackgroundPillarsTransparent_6
+    21300014: BrickBackgroundPillarsTransparent_7
+    21300016: BrickBackgroundPillarsTransparent_8
+    21300018: BrickBackgroundPillarsTransparent_9
+    21300020: BrickBackgroundPillarsTransparent_10
+    21300022: BrickBackgroundPillarsTransparent_11
+    21300024: BrickBackgroundPillarsTransparent_12
+    21300026: BrickBackgroundPillarsTransparent_13
+    21300028: BrickBackgroundPillarsTransparent_14
+    21300030: BrickBackgroundPillarsTransparent_15
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -104,7 +113,7 @@ TextureImporter:
       name: BrickBackgroundPillarsTransparent_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 48
         width: 16
         height: 16
@@ -118,8 +127,8 @@ TextureImporter:
       name: BrickBackgroundPillarsTransparent_2
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
+        x: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -133,7 +142,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -147,7 +156,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -158,6 +167,76 @@ TextureImporter:
       tessellationDetail: 0
     - serializedVersion: 2
       name: BrickBackgroundPillarsTransparent_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BrickBackgroundPillarsTransparent_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BrickBackgroundPillarsTransparent_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BrickBackgroundPillarsTransparent_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BrickBackgroundPillarsTransparent_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BrickBackgroundPillarsTransparent_10
       rect:
         serializedVersion: 2
         x: 32
@@ -171,7 +250,63 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BrickBackgroundPillarsTransparent_6
+      name: BrickBackgroundPillarsTransparent_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BrickBackgroundPillarsTransparent_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BrickBackgroundPillarsTransparent_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BrickBackgroundPillarsTransparent_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BrickBackgroundPillarsTransparent_15
       rect:
         serializedVersion: 2
         x: 48
