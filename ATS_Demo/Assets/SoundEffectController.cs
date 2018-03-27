@@ -6,18 +6,12 @@ public class SoundEffectController : MonoBehaviour {
 
     public AudioClip jump;
     public AudioClip coin;
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     public AudioClip blowDart;
     public AudioSource audioSourceJump;
     public AudioSource audioSourceCoin;
     public AudioSource audioSourceBlowdart;
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     public PhysicsObject player;
     public TriggerHandler trigger;
     public Projectile projectile;
@@ -37,10 +31,6 @@ public class SoundEffectController : MonoBehaviour {
         {
             audioSourceBlowdart.PlayOneShot(blowDart);
         }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
 	}
 }
