@@ -40,7 +40,7 @@ public class SoundEffectController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.E) && hiding.getCollidingHiding())
         {
-            audioSourceBlowdart.PlayOneShot(blowDart);
+            audioSourceHide.PlayOneShot(hide);
         }
 	}
 }
