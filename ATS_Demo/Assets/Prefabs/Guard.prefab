@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 60746366618105136}
   - component: {fileID: 114628385218238236}
   - component: {fileID: 50921833316273580}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vision
   m_TagString: DetectionZone
   m_Icon: {fileID: 0}

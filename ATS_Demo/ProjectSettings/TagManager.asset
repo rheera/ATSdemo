@@ -19,6 +19,7 @@ TagManager:
   - Spike
   - Fire
   - Noise
+  - TutJump
   layers:
   - Default
   - TransparentFX
@@ -28,10 +29,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - coin
+  - rock
+  - hiding
+  - vision
   - 
   - 
   - 

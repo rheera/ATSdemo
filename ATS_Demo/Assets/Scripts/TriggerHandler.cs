@@ -77,6 +77,16 @@ public class TriggerHandler : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
+        if (col.CompareTag("TutJump")) {
+            Debug.Log("Eneterd Tutorial Zone");
+            TutorialTextController.control.SetTutorialText("Press \"Space\" to Jump");
+            if (playOnce)
+            {
+                TutorialTextController.control.ShowText(true);
+                playOnce = false;
+            }
+        }
+
         if (col.CompareTag("HidingSpot"))
         {
 
@@ -102,9 +112,16 @@ public class TriggerHandler : MonoBehaviour
         {
             collidingHiding = false;
             TutorialTextController.control.ShowText(false);
+            playOnce = true;
         }
-    }
 
+        if (col.CompareTag("TutJump"))
+        {
+            TutorialTextController.control.ShowText(false);
+            playOnce = true;
+        }
+
+    }
     IEnumerator Hiding()
     {
         Debug.Log("Here");

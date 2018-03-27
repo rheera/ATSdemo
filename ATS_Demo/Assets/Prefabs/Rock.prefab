@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4923819994839206}
   - component: {fileID: 58656545309435890}
   - component: {fileID: 50951685261597868}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Noise
   m_Icon: {fileID: 0}
@@ -39,9 +39,9 @@ GameObject:
   - component: {fileID: 212040403478836152}
   - component: {fileID: 58267973324537004}
   - component: {fileID: 114409032134205894}
-  - component: {fileID: 50269424845584922}
   - component: {fileID: 114217293053412162}
-  m_Layer: 0
+  - component: {fileID: 50141738302734372}
+  m_Layer: 9
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ Transform:
   m_Father: {fileID: 4301861896013686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50269424845584922
+--- !u!50 &50141738302734372
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -157,6 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: {fileID: 58656545309435890}
+  coin: {fileID: 61694811687428802, guid: d566ca761d0bb41768bfcb9e2cea5da1, type: 2}
+  hiding: {fileID: 61244106762368616, guid: eed2e7012c033da4c8dd89a5e910184a, type: 2}
 --- !u!114 &114409032134205894
 MonoBehaviour:
   m_ObjectHideFlags: 1
