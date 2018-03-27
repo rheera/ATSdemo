@@ -78,10 +78,47 @@ public class TriggerHandler : MonoBehaviour
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("TutJump")) {
-            Debug.Log("Eneterd Tutorial Zone");
             TutorialTextController.control.SetTutorialText("Press \"Space\" to Jump");
             if (playOnce)
             {
+                TutorialTextController.control.ShowText(true);
+                playOnce = false;
+            }
+        }
+
+        if (col.CompareTag("TutGuard"))
+        {
+            
+            if (playOnce)
+            {
+                TutorialTextController.control.SetTutorialText("This is a guard!\n Stay out of his vision\n You can also jump on his head to take him out");
+                TutorialTextController.control.ShowText(true);
+                playOnce = false;
+            }
+        }
+        if (col.CompareTag("TutProj")) {
+            if (playOnce)
+            {
+                TutorialTextController.control.SetTutorialText("Darts incapacitate guards, fire with \"M\"\nRocks distract guards, throw with \"X\"");
+                TutorialTextController.control.ShowText(true);
+                playOnce = false;
+            }
+        }
+        if (col.CompareTag("TutKill"))
+        {
+            if (playOnce)
+            {
+                TutorialTextController.control.SetTutorialText("Be careful, if you kill too many guards\n reinforcements will arrive");
+                TutorialTextController.control.ShowText(true);
+                playOnce = false;
+            }
+        }
+
+        if (col.CompareTag("TutFinal"))
+        {
+            if (playOnce)
+            {
+                TutorialTextController.control.SetTutorialText("That's it, steal the treasure to advance and have fun!");
                 TutorialTextController.control.ShowText(true);
                 playOnce = false;
             }
@@ -115,7 +152,7 @@ public class TriggerHandler : MonoBehaviour
             playOnce = true;
         }
 
-        if (col.CompareTag("TutJump"))
+        if (col.CompareTag("TutJump") || col.CompareTag("TutJump")||col.CompareTag("TutProj")|| col.CompareTag("TutGuard")|| col.CompareTag("TutKill"))
         {
             TutorialTextController.control.ShowText(false);
             playOnce = true;
@@ -135,6 +172,12 @@ public class TriggerHandler : MonoBehaviour
         yield return new WaitForSeconds(fadeInTime);
         spriteRenderer.enabled = !spriteRenderer.enabled;
         fading = false;
+    }
+
+    IEnumerator FadeTime()
+    {
+        yield return new WaitForSeconds(1);
+        TutorialTextController.control.ShowText(false);
     }
 
 }

@@ -6,16 +6,14 @@ public class SoundEffectController : MonoBehaviour {
 
     public AudioClip jump;
     public AudioClip coin;
-    private AudioSource audioSourceJump;
-    private AudioSource audioSourceCoin;
+    
+    public AudioSource audioSourceJump;
+    public AudioSource audioSourceCoin;
+
+
     public PhysicsObject player;
     public TriggerHandler trigger;
 
-	// Use this for initialization
-	void Awake () {
-        audioSourceJump = GetComponent<AudioSource>();
-        audioSourceCoin = GetComponent<AudioSource>();
-    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -27,6 +25,7 @@ public class SoundEffectController : MonoBehaviour {
             audioSourceCoin.PlayOneShot(coin);
             trigger.pickedup = false;
         }
+
 
 	}
 }

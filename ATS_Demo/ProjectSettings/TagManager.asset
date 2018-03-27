@@ -20,6 +20,10 @@ TagManager:
   - Fire
   - Noise
   - TutJump
+  - TutGuard
+  - TutProj
+  - TutKill
+  - TutFinal
   layers:
   - Default
   - TransparentFX

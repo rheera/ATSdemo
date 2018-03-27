@@ -14,6 +14,7 @@ public class PlayerController : PhysicsObject {
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private TriggerHandler trigger;
+    private Restart restart;
     
 
     // Use this for initialization
@@ -22,6 +23,7 @@ public class PlayerController : PhysicsObject {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         trigger = GetComponent<TriggerHandler>();
+        restart = GetComponent<Restart>();
     }
     
     // Use this for initialization
@@ -112,7 +114,9 @@ public class PlayerController : PhysicsObject {
                     velocity.y = jumpTakeOffSpeed * 0.75f;
                 }
                 else {
+                    restart.RestartScene();
                     dead = true;
+
                 }
             }
             if (collision.gameObject.tag == ("Spike") || collision.gameObject.tag == ("Fire"))
