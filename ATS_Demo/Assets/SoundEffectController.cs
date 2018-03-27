@@ -6,13 +6,21 @@ public class SoundEffectController : MonoBehaviour {
 
     public AudioClip jump;
     public AudioClip coin;
+<<<<<<< Updated upstream
     
     public AudioSource audioSourceJump;
     public AudioSource audioSourceCoin;
 
 
+=======
+    public AudioClip blowDart;
+    public AudioSource audioSourceJump;
+    public AudioSource audioSourceCoin;
+    public AudioSource audioSourceBlowdart;
+>>>>>>> Stashed changes
     public PhysicsObject player;
     public TriggerHandler trigger;
+    public Projectile projectile;
 
 	
 	// Update is called once per frame
@@ -24,6 +32,10 @@ public class SoundEffectController : MonoBehaviour {
         if (trigger.pickedup == true) {
             audioSourceCoin.PlayOneShot(coin);
             trigger.pickedup = false;
+        }
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"]) && projectile.dartAmt > 0)
+        {
+            audioSourceBlowdart.PlayOneShot(blowDart);
         }
 
 
