@@ -32,6 +32,5 @@ public class SoundEffectController : MonoBehaviour {
             audioSourceBlowdart.PlayOneShot(blowDart);
         }
 
-
 	}
 }
