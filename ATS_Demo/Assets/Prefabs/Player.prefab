@@ -42,8 +42,6 @@ GameObject:
   - component: {fileID: 114696086028782836}
   - component: {fileID: 114916827638905718}
   - component: {fileID: 114238974900467708}
-  - component: {fileID: 114902756544911120}
-  - component: {fileID: 114142162981799824}
   - component: {fileID: 114510277071225140}
   - component: {fileID: 95394064221020964}
   - component: {fileID: 70129048175906486}
@@ -183,7 +181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046899679981106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.988011, y: 8.182678, z: 0}
+  m_LocalPosition: {x: 30.6, y: 5.5, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 0.5224618}
   m_Children:
   - {fileID: 4976642016712088}
@@ -1321,18 +1319,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114142162981799824
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1046899679981106}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27754e92ac99848f6b21e184d76bb0cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackTrigger: {fileID: 0}
 --- !u!114 &114238974900467708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1387,7 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6381f7fa32714fbf947c759d6df47d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeOutTexture: {fileID: 2800000, guid: 1e907808abee9472cba6665a70e400fd, type: 3}
+  fadeOutTexture: {fileID: 2800000, guid: 813f7cda435bf43b2b7a074d1f060549, type: 3}
   fadeSpeed: 0.8
   drawDepth: -1000
 --- !u!114 &114804942936463716
@@ -1402,26 +1388,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
-  gravityModifier: 2.1
+  gravityModifier: 2
   grounded: 0
   canDoubleJump: 1
   maxSpeed: 7
   jumpTakeOffSpeed: 10.5
   isLeft: 1
---- !u!114 &114902756544911120
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1046899679981106}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 080ab2fdf2e874c0dae8a5167cdcd90c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taserRightPrefab: {fileID: 1252650764894258, guid: ddb2fe0465a734ed194e566534cc743f,
-    type: 2}
-  projectilePrefabLeft: {fileID: 0}
 --- !u!114 &114916827638905718
 MonoBehaviour:
   m_ObjectHideFlags: 1
