@@ -69,6 +69,11 @@ public class PauseController : MonoBehaviour {
         GameControl.control.Load();
     }
 
+    public void Quit() 
+    {
+        Application.Quit();
+    }
+
     float GetMasterLevel(AudioMixer masterMixer)
     {
         float value;
