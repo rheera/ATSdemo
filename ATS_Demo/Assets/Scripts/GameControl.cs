@@ -48,6 +48,10 @@ public class GameControl : MonoBehaviour {
         return coins;
     }
 
+    public void setCoins(int num) {
+        coins = num;
+    }
+
 }
 
 //Serializable data container

@@ -14,10 +14,15 @@ public class TriggerHandler : MonoBehaviour
     private bool playOnce = true;
     private bool collidingHiding = false;
     private bool gotTreasure = false;
+    private string dartKey, rockKey, hideKey, jumpKey;
 
     // Use this for initialization
     void Start()
     {
+        dartKey = KeyBindScript.keybindControl.GetKeys()["ShootDart"].ToString();
+        rockKey = KeyBindScript.keybindControl.GetKeys()["ThrowRock"].ToString();
+        hideKey = KeyBindScript.keybindControl.GetKeys()["InteractButton"].ToString();
+        jumpKey = KeyBindScript.keybindControl.GetKeys()["JumpButton"].ToString();
         coinPickup = GameObject.FindGameObjectWithTag("CoinCollect").GetComponent<CoinPickup>();
     }
 
@@ -41,7 +46,7 @@ public class TriggerHandler : MonoBehaviour
         {
             if (hiding)
             {
-                TutorialTextController.control.SetTutorialText("Press \"E\" to exit the hiding spot\n You can not be detected while hiding");
+                TutorialTextController.control.SetTutorialText("Press \""+ hideKey +"\" to exit the hiding spot\n You can not be detected while hiding");
                 if (playOnce)
                 {
                     TutorialTextController.control.ShowText(true);
@@ -50,7 +55,7 @@ public class TriggerHandler : MonoBehaviour
             }
             else
             {
-                TutorialTextController.control.SetTutorialText("This is a hiding spot\n Press \"E\" to enter");
+                TutorialTextController.control.SetTutorialText("This is a hiding spot\n Press \""+ hideKey +"\" to enter");
                 playOnce = true;
             }
         }
@@ -90,7 +95,7 @@ public class TriggerHandler : MonoBehaviour
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("TutJump")) {
-            TutorialTextController.control.SetTutorialText("Press \"Space\" to Jump");
+            TutorialTextController.control.SetTutorialText("Press \""+jumpKey +"\" to Jump");
             if (playOnce)
             {
                 TutorialTextController.control.ShowText(true);
@@ -111,7 +116,7 @@ public class TriggerHandler : MonoBehaviour
         if (col.CompareTag("TutProj")) {
             if (playOnce)
             {
-                TutorialTextController.control.SetTutorialText("Darts incapacitate guards, fire with \"M\"\nRocks distract guards, throw with \"X\"");
+                TutorialTextController.control.SetTutorialText("Darts incapacitate guards, fire with \""+dartKey +"\"\nRocks distract guards, throw with \""+rockKey +"\"");
                 TutorialTextController.control.ShowText(true);
                 playOnce = false;
             }

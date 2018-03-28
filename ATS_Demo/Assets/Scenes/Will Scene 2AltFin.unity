@@ -25794,7 +25794,7 @@ GameObject:
   - component: {fileID: 765042256}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Window
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26169,7 +26169,7 @@ Prefab:
     - target: {fileID: 114763962882019800, guid: 00051f11b51c31548b967d6f44451377,
         type: 2}
       propertyPath: sceneIndex
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00051f11b51c31548b967d6f44451377, type: 2}
@@ -27409,7 +27409,7 @@ Prefab:
     - target: {fileID: 224202023795193212, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224799494261020882, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
@@ -27419,7 +27419,7 @@ Prefab:
     - target: {fileID: 224799494261020882, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224087614386626912, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
@@ -27429,7 +27429,7 @@ Prefab:
     - target: {fileID: 224087614386626912, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224981854472795440, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
@@ -27439,7 +27439,7 @@ Prefab:
     - target: {fileID: 224981854472795440, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224353124165926242, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
@@ -27474,7 +27474,7 @@ Prefab:
     - target: {fileID: 224251084175470280, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa800e8e4ca54b541b13793cc03025de, type: 2}

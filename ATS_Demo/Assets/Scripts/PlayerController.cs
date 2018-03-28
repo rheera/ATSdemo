@@ -38,7 +38,7 @@ public class PlayerController : PhysicsObject {
     {
 
 
-        //Debug.Log(jumping);
+        Debug.Log(KeyBindScript.keybindControl.GetKeys()["JumpButton"].ToString());
         Vector2 move = Vector2.zero;
         move.x = Input.GetAxis("Horizontal");
 

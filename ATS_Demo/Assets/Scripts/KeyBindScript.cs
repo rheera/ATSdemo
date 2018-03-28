@@ -17,7 +17,15 @@ public class KeyBindScript : MonoBehaviour {
 
     private void Awake()
     {
-        keybindControl = this;
+        if (keybindControl == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            keybindControl = this;
+        }
+        else if (keybindControl != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Use this for initialization
