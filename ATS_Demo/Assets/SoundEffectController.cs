@@ -31,6 +31,7 @@ public class SoundEffectController : MonoBehaviour {
     public Projectile projectile;
     public GroundCollision rockClass;
     public PlayerController dying;
+    public Rock actualRockClass;
 
 	
 	// Update is called once per frame
@@ -70,7 +71,7 @@ public class SoundEffectController : MonoBehaviour {
             audioSourceTreasure.PlayOneShot(treasure);
         }
 
-        if (Input.GetKeyDown(KeyCode.X)){
+        if (Input.GetKeyDown(KeyCode.X) && actualRockClass.rockAmt > 0 && !trigger.getCollidingHiding()){
             audioSourceRockThrow.PlayOneShot(rockThrow);
         }
 	}

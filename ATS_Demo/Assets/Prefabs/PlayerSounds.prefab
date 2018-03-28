@@ -1371,6 +1371,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1934264851458064, guid: f34cd6ec5ddd8894aaf3a71774dab51c,
     type: 2}
   throwSpeed: 0
+  rockAmt: 0
+  rockText: {fileID: 0}
 --- !u!114 &114497164856514048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1431,6 +1433,7 @@ MonoBehaviour:
   projectile: {fileID: 114726870089226584}
   rockClass: {fileID: 0}
   dying: {fileID: 114741913911151804}
+  actualRockClass: {fileID: 114405749635936038}
 --- !u!114 &114726870089226584
 MonoBehaviour:
   m_ObjectHideFlags: 1

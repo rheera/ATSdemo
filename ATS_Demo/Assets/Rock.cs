@@ -1,33 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Rock : MonoBehaviour
 {
 
     public GameObject projectilePrefab;
     private float projectileVelocity;
-    private bool playOnce = true;
     private PlayerController control;
     private List<GameObject> Projectiles = new List<GameObject>();
     private List<GameObject> ProjectilesLeft = new List<GameObject>();
     public float throwSpeed;
+    public int rockAmt;
+    public Text rockText;
+    private bool playOnce = true;
+    private TriggerHandler trigger;
 
     private void Awake()
     {
         control = gameObject.GetComponent<PlayerController>();
+        trigger = gameObject.GetComponent<TriggerHandler>();
+
     }
 
     // Use this for initialization
     void Start()
     {
         projectileVelocity = 10;
+        rockAmt = 5;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        rockText.text = ("Rock x " + rockAmt);
+        if (Input.GetKeyDown(KeyCode.X) && rockAmt > 0 && !trigger.getHiding())
         {
             if (control.GetLeft())
             {
@@ -35,6 +43,7 @@ public class Rock : MonoBehaviour
                 ProjectilesLeft.Add(blowdart);
                 PhysicsObject obj = blowdart.GetComponent<PhysicsObject>();
                 obj.SetVelocity(throwSpeed, 7f);
+                rockAmt--;
             }
             else
             {
@@ -42,6 +51,7 @@ public class Rock : MonoBehaviour
                 Projectiles.Add(blowdart);
                 PhysicsObject obj = blowdart.GetComponent<PhysicsObject>();
                 obj.SetVelocity(throwSpeed, 7f);
+                rockAmt--;
             }
         }
 
@@ -62,6 +72,24 @@ public class Rock : MonoBehaviour
                 goBlowdartLeft.transform.Translate(new Vector3(-1, 0) * Time.deltaTime * projectileVelocity);
             }
         }
+        if (Input.GetKeyDown(KeyCode.X) && rockAmt <= 0)
+        {
+            playOnce = true;
+            Debug.Log(rockAmt);
+            TutorialTextController.control.SetTutorialText("You're out of rocks!");
+            if (playOnce)
+            {
+                TutorialTextController.control.ShowText(true);
+                playOnce = false;
+                StartCoroutine(FadeTime());
+            }
+        }
+    }
+
+    IEnumerator FadeTime()
+    {
+        yield return new WaitForSeconds(1);
+        TutorialTextController.control.ShowText(false);
     }
 
 
