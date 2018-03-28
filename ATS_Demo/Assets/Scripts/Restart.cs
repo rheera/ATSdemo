@@ -33,7 +33,6 @@ public class Restart : MonoBehaviour {
     }
 
     public int sceneIndex() {
-        Debug.Log("Are you fucking with me");
         return SceneManager.GetActiveScene().buildIndex;
     }
 }
