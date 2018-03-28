@@ -9,6 +9,7 @@ public class GroundCollision : MonoBehaviour {
     public BoxCollider2D hiding;
     public SoundEffectController sfxControl;
     private CircleCollider2D rock;
+    private bool makeRockNoiseNow = false;
 
     private void Awake()
     {
@@ -28,9 +29,13 @@ public class GroundCollision : MonoBehaviour {
     }
 
     IEnumerator DestoryThing() {
-
+        makeRockNoiseNow = true;
         yield return new WaitForSeconds(0.01f);
         DestroyObject(gameObject);
+    }
+
+    public bool getRockNoise(){
+        return makeRockNoiseNow;
     }
 
 }

@@ -13,6 +13,7 @@ public class TriggerHandler : MonoBehaviour
     private bool fading = false;
     private bool playOnce = true;
     private bool collidingHiding = false;
+    private bool gotTreasure = false;
 
     // Use this for initialization
     void Start()
@@ -65,6 +66,7 @@ public class TriggerHandler : MonoBehaviour
         }
         if (col.CompareTag("Treasure"))
         {
+            gotTreasure = true;
             SceneControl.control.NextScene();
             Destroy(col.gameObject);
         }
@@ -182,6 +184,10 @@ public class TriggerHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         TutorialTextController.control.ShowText(false);
+    }
+
+    public bool getTreasure() {
+        return gotTreasure;
     }
 
 }
