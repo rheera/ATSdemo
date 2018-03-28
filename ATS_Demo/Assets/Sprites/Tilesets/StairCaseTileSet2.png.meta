@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: aa2408d3424881242835876eeebd45fd
-timeCreated: 1522092855
+timeCreated: 1522260696
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -24,6 +24,10 @@ TextureImporter:
     21300034: StairCaseTileSet2_17
     21300036: StairCaseTileSet2_18
     21300038: StairCaseTileSet2_19
+    21300040: StairCaseTileSet2_20
+    21300042: StairCaseTileSet2_21
+    21300044: StairCaseTileSet2_22
+    21300046: StairCaseTileSet2_23
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -103,8 +107,8 @@ TextureImporter:
       name: StairCaseTileSet2_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 32
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -117,8 +121,8 @@ TextureImporter:
       name: StairCaseTileSet2_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 48
+        x: 48
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -131,8 +135,8 @@ TextureImporter:
       name: StairCaseTileSet2_2
       rect:
         serializedVersion: 2
-        x: 80
-        y: 48
+        x: 32
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -145,8 +149,8 @@ TextureImporter:
       name: StairCaseTileSet2_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
+        x: 48
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -159,8 +163,8 @@ TextureImporter:
       name: StairCaseTileSet2_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 48
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -173,8 +177,8 @@ TextureImporter:
       name: StairCaseTileSet2_5
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
+        x: 64
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -187,8 +191,8 @@ TextureImporter:
       name: StairCaseTileSet2_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 80
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -201,7 +205,7 @@ TextureImporter:
       name: StairCaseTileSet2_7
       rect:
         serializedVersion: 2
-        x: 80
+        x: 16
         y: 32
         width: 16
         height: 16
@@ -215,8 +219,8 @@ TextureImporter:
       name: StairCaseTileSet2_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 32
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -229,8 +233,8 @@ TextureImporter:
       name: StairCaseTileSet2_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 48
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -243,8 +247,8 @@ TextureImporter:
       name: StairCaseTileSet2_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
+        x: 64
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -257,8 +261,8 @@ TextureImporter:
       name: StairCaseTileSet2_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
+        x: 80
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -271,7 +275,7 @@ TextureImporter:
       name: StairCaseTileSet2_12
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 16
         width: 16
         height: 16
@@ -285,7 +289,7 @@ TextureImporter:
       name: StairCaseTileSet2_13
       rect:
         serializedVersion: 2
-        x: 80
+        x: 16
         y: 16
         width: 16
         height: 16
@@ -299,6 +303,62 @@ TextureImporter:
       name: StairCaseTileSet2_14
       rect:
         serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: StairCaseTileSet2_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: StairCaseTileSet2_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: StairCaseTileSet2_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: StairCaseTileSet2_18
+      rect:
+        serializedVersion: 2
         x: 0
         y: 0
         width: 16
@@ -310,7 +370,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: StairCaseTileSet2_15
+      name: StairCaseTileSet2_19
       rect:
         serializedVersion: 2
         x: 16
@@ -324,7 +384,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: StairCaseTileSet2_16
+      name: StairCaseTileSet2_20
       rect:
         serializedVersion: 2
         x: 32
@@ -338,7 +398,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: StairCaseTileSet2_17
+      name: StairCaseTileSet2_21
       rect:
         serializedVersion: 2
         x: 48
@@ -352,7 +412,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: StairCaseTileSet2_18
+      name: StairCaseTileSet2_22
       rect:
         serializedVersion: 2
         x: 64
@@ -366,7 +426,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: StairCaseTileSet2_19
+      name: StairCaseTileSet2_23
       rect:
         serializedVersion: 2
         x: 80
