@@ -159,6 +159,8 @@ MonoBehaviour:
   col: {fileID: 58656545309435890}
   coin: {fileID: 61694811687428802, guid: d566ca761d0bb41768bfcb9e2cea5da1, type: 2}
   hiding: {fileID: 61244106762368616, guid: eed2e7012c033da4c8dd89a5e910184a, type: 2}
+  sfxControl: {fileID: 114318219374880250, guid: c89a55c2ddfd4ad46855d06ee9d6a21c,
+    type: 2}
 --- !u!114 &114409032134205894
 MonoBehaviour:
   m_ObjectHideFlags: 1
