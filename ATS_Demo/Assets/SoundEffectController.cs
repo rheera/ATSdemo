@@ -13,6 +13,7 @@ public class SoundEffectController : MonoBehaviour {
     //public AudioClip restart;
     public AudioClip stomp;
     public AudioClip treasure;
+    public AudioClip rockThrow;
 
     public AudioSource audioSourceJump;
     public AudioSource audioSourceCoin;
@@ -23,6 +24,7 @@ public class SoundEffectController : MonoBehaviour {
     //public AudioSource audioSourceRestart;
     public AudioSource audioSourceStomp;
     public AudioSource audioSourceTreasure;
+    public AudioSource audioSourceRockThrow;
 
     public PhysicsObject player;
     public TriggerHandler trigger;
@@ -66,6 +68,10 @@ public class SoundEffectController : MonoBehaviour {
 
         if (trigger.getTreasure()){
             audioSourceTreasure.PlayOneShot(treasure);
+        }
+
+        if (Input.GetKeyDown(KeyCode.X)){
+            audioSourceRockThrow.PlayOneShot(rockThrow);
         }
 	}
 }
