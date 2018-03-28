@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: TreasureRoomBackgroundTileSet_14
+  m_Name: WhitePillarTileSet_1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300028, guid: 8a541f6af1dcc354d81e3b9baba526ad, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 3dfa2f2799ca78f4eb7520d6abc25e3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
