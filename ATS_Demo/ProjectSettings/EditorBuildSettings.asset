@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Will Scene 2.unity
     guid: cec15c42512a23643930d13189f219e9
+  - enabled: 1
+    path: Assets/Scenes/Will Scene 3.unity
+    guid: 7ee740b3db0908b45a2f854c48b6bc9e
