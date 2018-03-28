@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Will Scene 2.unity
     guid: cec15c42512a23643930d13189f219e9
   - enabled: 1
-    path: Assets/Scenes/Will Scene 2Alt.unity
-    guid: 9471587b980d007439ad912c09f7e4f2
+    path: Assets/Scenes/Will Scene 2AltFin.unity
+    guid: 267dab4497672a746a4aadb32351cbf0
   - enabled: 1
     path: Assets/Scenes/Treasure Room Scene.unity
     guid: d16701d5536f9844690e4a40e0273b6b

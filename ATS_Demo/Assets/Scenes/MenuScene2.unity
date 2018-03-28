@@ -1959,13 +1959,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Developer:
-
-
-    Designer:
-
-
-    Professor:'
+  m_Text: 
 --- !u!222 &283428202
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3748,13 +3742,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'GalaxyS7User
-
-
-    Lg G6 User
-
-
-    Mike Katchawbaw'
+  m_Text: 
 --- !u!222 &628454402
 CanvasRenderer:
   m_ObjectHideFlags: 0
