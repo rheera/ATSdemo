@@ -7,6 +7,7 @@ public class GroundCollision : MonoBehaviour {
     public CircleCollider2D col;
     public BoxCollider2D coin;
     public BoxCollider2D hiding;
+    public SoundEffectController sfxControl;
     private CircleCollider2D rock;
 
     private void Awake()
@@ -20,6 +21,7 @@ public class GroundCollision : MonoBehaviour {
     {
         if (collision.collider.CompareTag("TileMap"))
         {
+            //sfxControl.PlayRock();
             col.enabled = true;
             StartCoroutine(DestoryThing());
         }

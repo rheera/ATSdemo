@@ -15,6 +15,7 @@ public class PlayerController : PhysicsObject {
     private Animator animator;
     private TriggerHandler trigger;
     private Restart restart;
+    public SoundEffectController sfxControl;
     
 
     // Use this for initialization
@@ -110,6 +111,7 @@ public class PlayerController : PhysicsObject {
                 float width = GetComponent<SpriteRenderer>().bounds.size.y;
                 if ((this.gameObject.transform.position.y - width) + 1.1f >= collision.gameObject.transform.position.y)
                 {
+                    //sfxControl.PlayHit();
                     Destroy(collision.gameObject);
                     velocity.y = jumpTakeOffSpeed * 0.75f;
                 }
