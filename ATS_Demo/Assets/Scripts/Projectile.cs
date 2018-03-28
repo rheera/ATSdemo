@@ -14,10 +14,12 @@ public class Projectile : MonoBehaviour {
     public int dartAmt;
     public Text dartText;
     private bool playOnce = true;
+    private TriggerHandler trigger;
 
     private void Awake()
     {
         control = gameObject.GetComponent<PlayerController>();
+        trigger = gameObject.GetComponent<TriggerHandler>();
     }
 
     // Use this for initialization
@@ -29,7 +31,7 @@ public class Projectile : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         dartText.text = ("Dart x " + dartAmt);
-        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"]) && dartAmt > 0){
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"]) && dartAmt > 0 && !trigger.getHiding()){
 
             if (control.GetLeft())
             {
