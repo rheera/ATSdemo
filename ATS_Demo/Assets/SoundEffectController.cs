@@ -66,10 +66,6 @@ public class SoundEffectController : MonoBehaviour {
             audioSourceStomp.PlayOneShot(stomp);
         }
 
-        if (trigger.getTreasure()){
-            audioSourceTreasure.PlayOneShot(treasure);
-        }
-
         if (Input.GetKeyDown(KeyCode.X)){
             audioSourceRockThrow.PlayOneShot(rockThrow);
         }

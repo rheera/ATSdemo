@@ -34,6 +34,7 @@ public class PlayerController : PhysicsObject {
 
     protected override void ComputeVelocity()
     {
+        
         //Debug.Log(jumping);
         Vector2 move = Vector2.zero;
         move.x = Input.GetAxis("Horizontal");
@@ -124,6 +125,7 @@ public class PlayerController : PhysicsObject {
             }
             if (collision.gameObject.tag == ("Spike") || collision.gameObject.tag == ("Fire"))
             {
+                restart.RestartScene();
                 dead = true;
             }
         }

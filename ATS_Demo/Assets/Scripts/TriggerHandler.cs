@@ -66,7 +66,7 @@ public class TriggerHandler : MonoBehaviour
         }
         if (col.CompareTag("Treasure"))
         {
-            gotTreasure = true;
+            //gotTreasure = true;
             SceneControl.control.NextScene();
             Destroy(col.gameObject);
         }
@@ -184,10 +184,6 @@ public class TriggerHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         TutorialTextController.control.ShowText(false);
-    }
-
-    public bool getTreasure() {
-        return gotTreasure;
     }
 
 }

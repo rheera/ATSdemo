@@ -159,8 +159,7 @@ MonoBehaviour:
   col: {fileID: 58656545309435890}
   coin: {fileID: 61694811687428802, guid: d566ca761d0bb41768bfcb9e2cea5da1, type: 2}
   hiding: {fileID: 61244106762368616, guid: eed2e7012c033da4c8dd89a5e910184a, type: 2}
-  sfxControl: {fileID: 114318219374880250, guid: c89a55c2ddfd4ad46855d06ee9d6a21c,
-    type: 2}
+  sfxControl: {fileID: 0}
 --- !u!114 &114409032134205894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -210,7 +209,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a4d3e961bc4fe4e11911872f34279faf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
