@@ -824,15 +824,15 @@ Tilemap:
   - m_RefCount: 38
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.83678985, g: 0.4359172, b: 0.4908536, a: 1}
+    m_Data: {r: 0.8564891, g: 0.3940496, b: 0.54562175, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.8185303, g: 0.55617416, b: 0.61848515, a: 1}
+    m_Data: {r: 0.8808062, g: 0.4817596, b: 0.5802089, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.91232073, g: 0.5630794, b: 0.61711913, a: 1}
+    m_Data: {r: 0.79486585, g: 0.55477494, b: 0.56512034, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -23, y: -8, z: 0}
-  m_Size: {x: 26, y: 14, z: 1}
+  m_Size: {x: 26, y: 15, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
