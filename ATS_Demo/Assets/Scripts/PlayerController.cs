@@ -10,6 +10,7 @@ public class PlayerController : PhysicsObject {
     private bool dead = false;
     private bool jumping = false;
     public bool isLeft = true;
+    private bool guardStomp = false;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -110,8 +111,10 @@ public class PlayerController : PhysicsObject {
                 float width = GetComponent<SpriteRenderer>().bounds.size.y;
                 if ((this.gameObject.transform.position.y - width) + 1.1f >= collision.gameObject.transform.position.y)
                 {
+                    guardStomp = true;
                     Destroy(collision.gameObject);
                     velocity.y = jumpTakeOffSpeed * 0.75f;
+                    guardStomp = false;
                 }
                 else {
                     restart.RestartScene();
@@ -128,6 +131,14 @@ public class PlayerController : PhysicsObject {
 
     public void setDead(bool dead) {
         this.dead = dead;
+    }
+
+    public bool getDead(){
+        return dead;
+    }
+
+    public bool getStomp(){
+        return guardStomp;
     }
 
     public bool GetLeft() {
