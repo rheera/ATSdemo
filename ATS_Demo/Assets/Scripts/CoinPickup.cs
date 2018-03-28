@@ -16,6 +16,13 @@ public class CoinPickup : MonoBehaviour {
     void Update()
     {
         coins = GameControl.control.getCoins();
-        coinsText.text = ("Coins: " + coins);
+        if (coins < 100)
+        {
+            coinsText.text = ("Coins: " + coins);
+        }
+        else {
+            coinsText.text = ("Coins:" + coins);
+        }
+        
     }
 }
