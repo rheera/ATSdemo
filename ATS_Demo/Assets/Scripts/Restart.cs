@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Restart : MonoBehaviour {
 
     private Scene scene;
-
+    
 	// Use this for initialization
     //Scene scene;
     void Start () {
@@ -29,6 +30,7 @@ public class Restart : MonoBehaviour {
     }*/
     public void RestartScene()
     {
+        MusicController.control.Restart();
         SceneManager.LoadScene(scene.name);
     }
 

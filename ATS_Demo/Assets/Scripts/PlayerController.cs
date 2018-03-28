@@ -51,7 +51,7 @@ public class PlayerController : PhysicsObject {
         }
 
         //Will have to modify for double jump 
-        if (Input.GetButtonDown("Jump")) 
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["JumpButton"])) 
         {
             if (grounded)
             {
@@ -66,7 +66,7 @@ public class PlayerController : PhysicsObject {
                 }
             }
         }
-        else if (Input.GetButtonUp("Jump")) {
+        else if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["JumpButton"])) {
             if (velocity.y > 0) {
                 velocity.y = velocity.y * .5f; //Reduce velocity when player lets go of jump button
             }
@@ -83,8 +83,9 @@ public class PlayerController : PhysicsObject {
         //Animation Controller 
         if (!dead)
         {
-            if (Input.GetButton("Jump"))
+            if (Input.GetKey(KeyBindScript.keybindControl.GetKeys()["JumpButton"]))
             {
+                Debug.Log("Jump registered");
                 animator.SetInteger("state", 2);
             }
 
@@ -110,11 +111,10 @@ public class PlayerController : PhysicsObject {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!dead)
-        {
-                if (gameObject.tag != "Hiding" && !dead)
+        
+                if (gameObject.tag != "Hiding")
                 {
-                    if (collision.gameObject.tag == ("Crate") && !dead)
+                    if (collision.gameObject.tag == ("Crate"))
                     {
                         float width = GetComponent<SpriteRenderer>().bounds.size.y;
                         if ((this.gameObject.transform.position.y - width) + 1.1f >= collision.gameObject.transform.position.y)
@@ -126,29 +126,17 @@ public class PlayerController : PhysicsObject {
                         }
                         else
                         {
-                            if (!dead)
-                            {
-                                dead = true;
-                                SoundEffectController.control.PlayDeath();
-                                StartCoroutine(Wait());
-                            }
                             dead = true;
-
+                            restart.RestartScene();
                         }
-                    }
-                    if (collision.gameObject.tag == ("Spike") || collision.gameObject.tag == ("Fire"))
-                    {
-                        if (!dead)
-                        {
-                            dead = true;
-                            SoundEffectController.control.PlayDeath();
-                            StartCoroutine(Wait());
-                        }
-                        dead = true;
-
+                         
                     }
                 }
-            }
+                    if (collision.gameObject.tag == ("Spike") || collision.gameObject.tag == ("Fire"))
+                    {
+                        dead = true;
+                        restart.RestartScene();
+                    }
     }
 
     public void setDead(bool dead) {
@@ -167,10 +155,4 @@ public class PlayerController : PhysicsObject {
         return isLeft;
     }
     
-    IEnumerator Wait() {
-        Debug.Log("YEp");
-        
-        yield return new WaitForSeconds(10f);
-        restart.RestartScene();
-    }
 }

@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 
 public class MusicController : MonoBehaviour {
 
+    public static MusicController control;
     public AudioMixerSnapshot stealth, inPursuit;
     public float bpm = 128; //Represents Beats Per Minute
 
@@ -12,6 +13,7 @@ public class MusicController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        control = this;
         m_QuarterNote = 60 / bpm;
         m_TransitionIn = m_QuarterNote; // 1 bar transition in (quick fade in)
         m_TransitionOut = m_QuarterNote * 4; //8 bar transition out (slow fade out)
@@ -31,6 +33,10 @@ public class MusicController : MonoBehaviour {
             stealth.TransitionTo(m_TransitionOut);
         }
 
+    }
+
+    public void Restart() {
+        stealth.TransitionTo(m_TransitionOut);
     }
 
     IEnumerator Fadeout() {

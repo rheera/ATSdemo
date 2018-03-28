@@ -29,7 +29,7 @@ public class TriggerHandler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.E) && hiding)
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["InteractButton"]) && hiding)
         {
             Debug.Log("Entered");
             SmokeEffectController.control.Play();
@@ -139,7 +139,7 @@ public class TriggerHandler : MonoBehaviour
         if (col.CompareTag("HidingSpot"))
         {
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["InteractButton"]))
             {
                 SmokeEffectController.control.Play();
                 gameObject.GetComponent<Rigidbody2D>().simulated = !gameObject.GetComponent<Rigidbody2D>().simulated;

@@ -51,4 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8969b251d68cc4ab6e60b16a39fc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 20
+  coins: 0

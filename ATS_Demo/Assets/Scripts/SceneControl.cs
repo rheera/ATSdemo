@@ -64,6 +64,10 @@ public class SceneControl : MonoBehaviour {
         }
     }
 
+    public void ToMenu() {
+        SceneManager.LoadScene(0);
+    }
+
 }
 
 

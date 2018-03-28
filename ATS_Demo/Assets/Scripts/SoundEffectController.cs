@@ -43,19 +43,19 @@ public class SoundEffectController : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate () {
 
-        if (Input.GetButtonDown("Jump") && (player.grounded || player.canDoubleJump) && !trigger.getCollidingHiding()) {
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["JumpButton"]) && (player.grounded || player.canDoubleJump) && !trigger.getCollidingHiding()) {
             audioSourceJump.PlayOneShot(jump);
         }
         if (trigger.pickedup == true) {
             audioSourceCoin.PlayOneShot(coin);
             trigger.pickedup = false;
         }
-        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"]) && projectile.dartAmt > 0 && !trigger.getCollidingHiding())
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootDart"]) && projectile.dartAmt > 0 && !trigger.getCollidingHiding())
         {
             audioSourceBlowdart.PlayOneShot(blowDart);
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && trigger.getCollidingHiding())
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["InteractButton"]) && trigger.getCollidingHiding())
         {
             audioSourceHide.PlayOneShot(hide);
         }
@@ -77,7 +77,7 @@ public class SoundEffectController : MonoBehaviour {
             audioSourceTreasure.PlayOneShot(treasure);
         }
 
-        if (Input.GetKeyDown(KeyCode.X) && actualRockClass.rockAmt > 0 && !trigger.getCollidingHiding()){
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ThrowRock"]) && actualRockClass.rockAmt > 0 && !trigger.getCollidingHiding()){
             audioSourceRockThrow.PlayOneShot(rockThrow);
         }
 	}

@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         dartText.text = ("Dart x " + dartAmt);
-        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"]) && dartAmt > 0 && !trigger.getHiding()){
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootDart"]) && dartAmt > 0 && !trigger.getHiding()){
 
             if (control.GetLeft())
             {
@@ -77,7 +77,7 @@ public class Projectile : MonoBehaviour {
 
             }
         }
-        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"]) && dartAmt <= 0)
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootDart"]) && dartAmt <= 0)
         {
             playOnce = true;
             Debug.Log(dartAmt);

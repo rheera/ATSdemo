@@ -302,6 +302,11 @@ Prefab:
       propertyPath: dartText
       value: 
       objectReference: {fileID: 34025346}
+    - target: {fileID: 114941547139953526, guid: e8bce67b4517b2044886f9c42af5e2e0,
+        type: 2}
+      propertyPath: throwSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8bce67b4517b2044886f9c42af5e2e0, type: 2}
   m_IsPrefabParent: 0
@@ -377,7 +382,7 @@ Prefab:
     - target: {fileID: 114929020518634414, guid: 6d6a665ac3e6a61418e8063c70525485,
         type: 2}
       propertyPath: lookRadius
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212319721573367848, guid: 6d6a665ac3e6a61418e8063c70525485,
         type: 2}

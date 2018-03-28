@@ -816,7 +816,7 @@ Prefab:
     - target: {fileID: 224202023795193212, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224251084175470280, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
@@ -826,7 +826,7 @@ Prefab:
     - target: {fileID: 224251084175470280, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224981854472795440, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
@@ -836,7 +836,7 @@ Prefab:
     - target: {fileID: 224981854472795440, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224799494261020882, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
@@ -846,7 +846,7 @@ Prefab:
     - target: {fileID: 224799494261020882, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224087614386626912, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
@@ -856,7 +856,22 @@ Prefab:
     - target: {fileID: 224087614386626912, guid: aa800e8e4ca54b541b13793cc03025de,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212193929572207594, guid: aa800e8e4ca54b541b13793cc03025de,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 530645451
+      objectReference: {fileID: 0}
+    - target: {fileID: 212193929572207594, guid: aa800e8e4ca54b541b13793cc03025de,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212193929572207594, guid: aa800e8e4ca54b541b13793cc03025de,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa800e8e4ca54b541b13793cc03025de, type: 2}
@@ -922,6 +937,11 @@ Prefab:
     - target: {fileID: 4847199508938596, guid: e8bce67b4517b2044886f9c42af5e2e0, type: 2}
       propertyPath: m_LocalPosition.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114941547139953526, guid: e8bce67b4517b2044886f9c42af5e2e0,
+        type: 2}
+      propertyPath: throwSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8bce67b4517b2044886f9c42af5e2e0, type: 2}
@@ -18099,7 +18119,7 @@ Prefab:
     - target: {fileID: 114108745195159666, guid: b2df53fd1aa739c4abb3cbb5329cfe9f,
         type: 2}
       propertyPath: coins
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2df53fd1aa739c4abb3cbb5329cfe9f, type: 2}

@@ -25,16 +25,16 @@ public class KeyBindScript : MonoBehaviour {
         keys.Add("JumpButton", (KeyCode)System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("JumpButton", "W")));
         keys.Add("LeftButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButton", "A")));
         keys.Add("RightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButton", "D")));
-        keys.Add("InteractButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("InteractButton", "S")));
-        keys.Add("ShootLeftButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ShootLeftButton", "N")));
-        keys.Add("ShootRightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ShootRightButton", "M")));
+        keys.Add("InteractButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("InteractButton", "E")));
+        keys.Add("ShootDart", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ShootDart", "N")));
+        keys.Add("ThrowRock", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ThrowRock", "M")));
 
         jump.text = keys["JumpButton"].ToString();
         left.text = keys["LeftButton"].ToString();
         right.text = keys["RightButton"].ToString();
         interact.text = keys["InteractButton"].ToString();
-        shootLeft.text = keys["ShootLeftButton"].ToString();
-        shootRight.text = keys["ShootRightButton"].ToString();
+        shootLeft.text = keys["ShootDart"].ToString();
+        shootRight.text = keys["ThrowRock"].ToString();
     }
 	
 	// Update is called once per frame
@@ -55,13 +55,13 @@ public class KeyBindScript : MonoBehaviour {
         {
             Debug.Log("Interact");
         }
-        if (Input.GetKeyDown(keys["ShootLeftButton"]))
+        if (Input.GetKeyDown(keys["ShootDart"]))
         {
-            Debug.Log("Shoot Left");
+            Debug.Log("Shoot Dart");
         }
-        if (Input.GetKeyDown(keys["ShootRightButton"]))
+        if (Input.GetKeyDown(keys["ThrowRock"]))
         {
-            Debug.Log("Shoot Right");
+            Debug.Log("Throw Rock");
         }
     }
 

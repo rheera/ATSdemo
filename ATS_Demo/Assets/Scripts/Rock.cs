@@ -27,6 +27,7 @@ public class Rock : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        throwSpeed = 5;
         projectileVelocity = 10;
         rockAmt = 5;
     }
@@ -35,7 +36,7 @@ public class Rock : MonoBehaviour
     void FixedUpdate()
     {
         rockText.text = ("Rock x " + rockAmt);
-        if (Input.GetKeyDown(KeyCode.X) && rockAmt > 0 && !trigger.getHiding())
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ThrowRock"]) && rockAmt > 0 && !trigger.getHiding())
         {
             if (control.GetLeft())
             {

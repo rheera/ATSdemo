@@ -731,7 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1934264851458064, guid: f34cd6ec5ddd8894aaf3a71774dab51c,
     type: 2}
-  throwSpeed: 10
+  throwSpeed: 5
   rockAmt: 5
   rockText: {fileID: 612736096}
 --- !u!114 &406095340
