@@ -38,4 +38,9 @@ public class GroundCollision : MonoBehaviour {
         return makeRockNoiseNow;
     }
 
+    private void OnDestroy()
+    {
+        SoundEffectController.control.PlayRock();
+    }
+
 }

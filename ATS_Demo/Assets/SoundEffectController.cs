@@ -33,9 +33,15 @@ public class SoundEffectController : MonoBehaviour {
     public PlayerController dying;
     public Rock actualRockClass;
 
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+    public static SoundEffectController control;
+
+    private void Awake()
+    {
+        control = this;
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
 
         if (Input.GetButtonDown("Jump") && (player.grounded || player.canDoubleJump) && !trigger.getCollidingHiding()) {
             audioSourceJump.PlayOneShot(jump);
@@ -75,4 +81,17 @@ public class SoundEffectController : MonoBehaviour {
             audioSourceRockThrow.PlayOneShot(rockThrow);
         }
 	}
+
+    public void PlayHit() {
+        audioSourceDead.PlayOneShot(stomp);
+    }
+
+    public void PlayRock()
+    {
+        audioSourceDead.PlayOneShot(rock);
+    }
+
+    public void PlayDeath() {
+        audioSourceDead.PlayOneShot(dead);
+    }
 }

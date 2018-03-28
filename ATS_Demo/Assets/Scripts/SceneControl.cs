@@ -25,7 +25,7 @@ public class SceneControl : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void SetSceneIndex (int index) {
+    public void SetSceneIndex (int index) {
         sceneIndex = index;
 	}
 
@@ -35,7 +35,7 @@ public class SceneControl : MonoBehaviour {
 
     public void NextScene() {
         sceneIndex += 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(sceneIndex);
     }
 
     //Checks to see if a save file exists

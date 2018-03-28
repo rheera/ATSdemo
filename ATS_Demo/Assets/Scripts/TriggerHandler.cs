@@ -66,6 +66,7 @@ public class TriggerHandler : MonoBehaviour
         }
         if (col.CompareTag("Treasure"))
         {
+            Debug.Log("Hello There");
             gotTreasure = true;
             SceneControl.control.NextScene();
             Destroy(col.gameObject);
@@ -75,6 +76,15 @@ public class TriggerHandler : MonoBehaviour
             collidingHiding = true;
             TutorialTextController.control.ShowText(true);
         }
+        if (col.CompareTag("Door")) {
+            SceneControl.control.NextScene();
+        }
+        if (col.CompareTag("Window"))
+        {
+            SceneControl.control.SetSceneIndex(SceneControl.control.GetSceneIndex() + 1);
+            SceneControl.control.NextScene();
+        }
+
     }
 
     private void OnTriggerStay2D(Collider2D col)

@@ -65,6 +65,7 @@ public class PauseController : MonoBehaviour {
     }
 
     public void Load() {
+        Resume();
         SceneControl.control.Load();
         GameControl.control.Load();
     }
@@ -87,5 +88,4 @@ public class PauseController : MonoBehaviour {
             return 0f;
         }
     }
-
 }

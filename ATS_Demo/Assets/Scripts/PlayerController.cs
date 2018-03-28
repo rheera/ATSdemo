@@ -16,6 +16,7 @@ public class PlayerController : PhysicsObject {
     private Animator animator;
     private TriggerHandler trigger;
     private Restart restart;
+    private CapsuleCollider2D coll;
     
 
     // Use this for initialization
@@ -25,6 +26,7 @@ public class PlayerController : PhysicsObject {
         animator = GetComponent<Animator>();
         trigger = GetComponent<TriggerHandler>();
         restart = GetComponent<Restart>();
+        coll = gameObject.GetComponent<CapsuleCollider2D>();
     }
     
     // Use this for initialization
@@ -34,6 +36,8 @@ public class PlayerController : PhysicsObject {
 
     protected override void ComputeVelocity()
     {
+
+
         //Debug.Log(jumping);
         Vector2 move = Vector2.zero;
         move.x = Input.GetAxis("Horizontal");
@@ -106,27 +110,45 @@ public class PlayerController : PhysicsObject {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(gameObject.tag != "Hiding") { 
-            if (collision.gameObject.tag == ("Crate")){
-                float width = GetComponent<SpriteRenderer>().bounds.size.y;
-                if ((this.gameObject.transform.position.y - width) + 1.1f >= collision.gameObject.transform.position.y)
+        if (!dead)
+        {
+                if (gameObject.tag != "Hiding" && !dead)
                 {
-                    guardStomp = true;
-                    Destroy(collision.gameObject);
-                    velocity.y = jumpTakeOffSpeed * 0.75f;
-                    guardStomp = false;
-                }
-                else {
-                    restart.RestartScene();
-                    dead = true;
+                    if (collision.gameObject.tag == ("Crate") && !dead)
+                    {
+                        float width = GetComponent<SpriteRenderer>().bounds.size.y;
+                        if ((this.gameObject.transform.position.y - width) + 1.1f >= collision.gameObject.transform.position.y)
+                        {
+                            guardStomp = true;
+                            Destroy(collision.gameObject);
+                            velocity.y = jumpTakeOffSpeed * 0.75f;
+                            guardStomp = false;
+                        }
+                        else
+                        {
+                            if (!dead)
+                            {
+                                dead = true;
+                                SoundEffectController.control.PlayDeath();
+                                StartCoroutine(Wait());
+                            }
+                            dead = true;
 
+                        }
+                    }
+                    if (collision.gameObject.tag == ("Spike") || collision.gameObject.tag == ("Fire"))
+                    {
+                        if (!dead)
+                        {
+                            dead = true;
+                            SoundEffectController.control.PlayDeath();
+                            StartCoroutine(Wait());
+                        }
+                        dead = true;
+
+                    }
                 }
             }
-            if (collision.gameObject.tag == ("Spike") || collision.gameObject.tag == ("Fire"))
-            {
-                dead = true;
-            }
-        }
     }
 
     public void setDead(bool dead) {
@@ -144,5 +166,11 @@ public class PlayerController : PhysicsObject {
     public bool GetLeft() {
         return isLeft;
     }
-
+    
+    IEnumerator Wait() {
+        Debug.Log("YEp");
+        
+        yield return new WaitForSeconds(10f);
+        restart.RestartScene();
+    }
 }

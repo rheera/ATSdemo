@@ -205,4 +205,9 @@ public class move : PhysicsObject {
         }
     }
 
+    private void OnDestroy()
+    {
+        SoundEffectController.control.PlayHit();
+    }
+
 }
