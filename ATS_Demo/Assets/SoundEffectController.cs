@@ -36,14 +36,14 @@ public class SoundEffectController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        if (Input.GetButtonDown("Jump") && (player.grounded || player.canDoubleJump)) {
+        if (Input.GetButtonDown("Jump") && (player.grounded || player.canDoubleJump) && !trigger.getCollidingHiding()) {
             audioSourceJump.PlayOneShot(jump);
         }
         if (trigger.pickedup == true) {
             audioSourceCoin.PlayOneShot(coin);
             trigger.pickedup = false;
         }
-        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"]) && projectile.dartAmt > 0)
+        if (Input.GetKeyDown(KeyBindScript.keybindControl.GetKeys()["ShootLeftButton"]) && projectile.dartAmt > 0 && !trigger.getCollidingHiding())
         {
             audioSourceBlowdart.PlayOneShot(blowDart);
         }
