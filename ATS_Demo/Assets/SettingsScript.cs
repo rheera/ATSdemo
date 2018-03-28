@@ -45,6 +45,7 @@ public class SettingsScript : MonoBehaviour
         current_quality_index = PlayerPrefs.GetInt("qi");
         Quality.value = current_quality_index;
         isFullScreen = PlayerPrefs.GetInt("fs");
+        Fullscreen.isOn = (isFullScreen == 1) ? true : false;
         prev_ev = EffectVolume.value;
         prev_mv = MusicVolume.value;
         prev_quality_index = current_quality_index;
